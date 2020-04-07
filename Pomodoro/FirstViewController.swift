@@ -15,15 +15,15 @@ class FirstViewController: UIViewController {
     
     deinit {
         //ACTION: Remove observers
-       
+        print("Removed Observer")
+        NotificationCenter.default.removeObserver(self, name: Notification.Name("receivedNotification"), object: nil)
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         //ACTION: Add observers
-       
-        
+        print("Added Observer")
+        NotificationCenter.default.addObserver(self, selector: #selector(receivedNotification(_:)), name: Notification.Name("receivedNotification"), object: nil)
     }
     
     @objc func receivedNotification(_ notification:Notification) {
