@@ -48,6 +48,7 @@ class ViewController: UIViewController {
         //ACTION: Set button actions for startPauseButton, resetButton and closeButton
         startPauseButton.addTarget(self, action: #selector(startPauseButtonPressed(_:)), for: .touchUpInside)
         resetButton.addTarget(self, action: #selector(resetButtonPressed(_:)), for: .touchUpInside)
+        closeButton.addTarget(self, action: #selector(closeButtonPressed(_:)), for: .touchUpInside)
        
 
         resetAll()
@@ -130,7 +131,7 @@ class ViewController: UIViewController {
     func startTimer() {
         //ACTION: create the timer, selector should be runTimer()
         
-//        let timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(runTimer), userInfo: nil, repeats: true)
+        timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(runTimer), userInfo: nil, repeats: true)
 //        runTimer()
         
     }

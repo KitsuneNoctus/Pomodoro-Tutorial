@@ -28,7 +28,9 @@ class FirstViewController: UIViewController {
     
     @objc func receivedNotification(_ notification:Notification) {
         // ACTION: Update value of completed cycles
+        completedCycles += 1
         // ACTION: Update message label
+        messageLabel.text = "\(completedCycles) pomodoro cycles completed today."
         
     }
 }
